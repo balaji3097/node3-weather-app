@@ -9,8 +9,8 @@ const getGeoLocation = (location, callback) => {
     } else if(data.body.error) {
         callback('Give valid location', undefined)
     } else {
-        const { current } = data.body
-        callback(undefined, current)
+        const { current, location } = data.body
+        callback(undefined, {current, location})
     }
 })
 }

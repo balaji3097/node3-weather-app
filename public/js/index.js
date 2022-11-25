@@ -14,12 +14,18 @@ weatherForm.addEventListener('submit', (e) => {
                 report.innerHTML = error_response
             } else {
                 console.log(data, 'output')
-                report.innerHTML = `humidity is ${data.humidity} however it feels like  ${data.feelslike}
-                . its acyually a ${data.is_day}. cloud cover is ${data.cloudcover}. widndirection is ${data.wind_dir}
-                wind speed is ${data.wind_speed}`
-                // data.weather_icons
-                // data.weather_descriptions
-              
+                // report.innerHTML = `humidity is ${data.humidity} however it feels like  ${data.feelslike}
+                // . its acyually a ${data.is_day}. cloud cover is ${data.cloudcover}. widndirection is ${data.wind_dir}
+                // wind speed is ${data.wind_speed}`
+                report.innerHTML = `<ul>
+                    <li>Requested data for ${data.location.name}</li>
+                    <li>country: ${data.location.country}</li>
+                    <li>region: ${data.location.region}</li>
+                    <li>Humidity: ${data.current.humidity}</li>
+                    <li>Wind speed: ${data.current.wind_speed}</li>
+                    <li>Wind direction: ${data.current.wind_dir}</li>
+                    <li>${data.current.weather_descriptions} <img src=${data.current.weather_icons} /></li>
+                </ul>`
             }
         })
 
