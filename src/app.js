@@ -47,7 +47,7 @@ app.get('/',(req, res)=>{
 app.get('/about',(req, res)=>{
     res.render('about', {
     title:'About me',
-    content: 'This is About page',
+    content: 'This page was created by Balaji',
     footerTitle: 'footer section for About'
     })
 })
