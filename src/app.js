@@ -5,6 +5,7 @@ const hbs = require('hbs')
 const getGeoLocation = require('./utils/geolocation')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // path define here
 const getpath = path.join(__dirname, '../public')
@@ -74,6 +75,6 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('server is started!!!')
+app.listen(port, ()=>{
+    console.log('server is started!!!'+ port)
 })

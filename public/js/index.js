@@ -6,7 +6,7 @@ weatherForm.addEventListener('submit', (e) => {
     const searchData = searchValue.value
     const report = document.getElementsByClassName('report')[0]
     report.innerHTML = 'loading.....'
-    fetch('http://localhost:3000/weather?search='+searchData).then((response)=>{
+    fetch('/weather?search='+searchData).then((response)=>{
         response.json().then(({error_response, data})=>{
             // console.log(data, 'original')
             report.innerHTML = ''
